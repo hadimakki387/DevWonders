@@ -1,8 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-
-function ProjectsLogic({ onProjectSelect }) {
+function ProjectsLogic({ onProjectSelect }: { onProjectSelect: Function }) {
   const Projects = [
     {
       name: "Dev Wonders",
@@ -42,35 +41,39 @@ function ProjectsLogic({ onProjectSelect }) {
     },
   ];
 
-  const handleProjectClick = (project) => {
-    onProjectSelect(project);
-  };
-  
-
-
   return (
-    <div>
-        {Projects.map((project, index) => (
-        
-          <div className="reveal" onClick={() => handleProjectClick(project)} key={index}>
-            <figure className="projectFigure">
-              <Image className="ProjectImg" width={2000} height={2000} src={"/"+project.img} alt="sample99"  />
-              <figcaption>
-                <h3 className="ProjectTitle">{project.name}</h3>
-                <h4 className="ProjectExcerpt">{project.excerpt}</h4>
-                <br />
-                <div className="TechnologiesDiv">
-                  {project.technologies.map((technology, index) => (
-                    <h4 className="Technologies" key={index}>
-                      {technology}
-                    </h4>
-                  ))}
-                </div>
-              </figcaption>
-            </figure>
-          </div>
+    <div className="reveal">
+      {Projects.map((project, index) => (
+       
+        <div
+          className=""
+          onClick={() => onProjectSelect(project)}
+          key={index}
+        >
+          
+          <figure className="projectFigure">
+            <Image
+              className="ProjectImg"
+              width={2000}
+              height={2000}
+              src={"/" + project.img}
+              alt="sample99"
+            />
+            <figcaption>
+              <h3 className="ProjectTitle">{project.name}</h3>
+              <h4 className="ProjectExcerpt">{project.excerpt}</h4>
+              <br />
+              <div className="TechnologiesDiv">
+                {project.technologies.map((technology, index) => (
+                  <h4 className="Technologies" key={index}>
+                    {technology}
+                  </h4>
+                ))}
+              </div>
+            </figcaption>
+          </figure>
+        </div>
       ))}
-      
     </div>
   );
 }

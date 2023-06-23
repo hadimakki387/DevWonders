@@ -228,7 +228,7 @@ html:not(html:hover) .cursor::after {
 @media only screen and (max-width: 470px) {
   .Projects {
     width: 100%;
-    margin: 3rem auto;
+    margin: 7rem auto;
   }
   .ProjectImg {
     width: 100%;

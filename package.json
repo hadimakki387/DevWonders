@@ -21,6 +21,7 @@
     "react-awesome-reveal": "^4.2.3",
     "react-click-away-listener": "^2.2.3",
     "react-dom": "18.2.0",
+    "react-reveal": "^1.2.2",
     "typescript": "5.1.3"
   }
 }

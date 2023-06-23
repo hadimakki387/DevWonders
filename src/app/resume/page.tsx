@@ -71,7 +71,7 @@ function Resume() {
           <div>
             <NextButton
               Content="Are you convinced to contact me now ?"
-              URI="/ContactMe"
+              URI="/contactMe"
             />
             <div className="WindowsSocialMediaDiv">
               <SocialMediaLinks />

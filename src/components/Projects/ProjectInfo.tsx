@@ -3,18 +3,18 @@ import React from "react";
 import ClickAwayListener from "react-click-away-listener";
 
 
-function ProjectInfo(props) {
-  const { name, excerpt, description, technologies, img, Link } = props.project;
+function ProjectInfo({handleClickAway,setNull,project}:{handleClickAway:any,setNull:any,project:any}) {
+  const { name, excerpt, description, technologies, img, Link } = project;
 
   function handleButtonClick() {
-    props.setNull();
+    setNull();
   }
 
   return (
     <ClickAwayListener onClickAway={handleButtonClick}>
       <div
         className="pos__relative snipcss-9ePpH ProjectInfoDiv"
-        onClick={props.handleClickAway}
+        onClick={handleClickAway}
       >
         <div className="d-flex justify-content-between header">
           <button
@@ -47,7 +47,7 @@ function ProjectInfo(props) {
         <div className="main__post">
           <p className="te mb-4">{excerpt}</p>
           <Image
-            src={img}
+            src={"/"+img}
             alt="Piggment"
             width={2000}
             height={2000}
@@ -57,7 +57,7 @@ function ProjectInfo(props) {
           <p className="ProjectInfoDescription">{description}</p>
           <h4>Technologies</h4>
           <p className="d-flex flex-wrap">
-            {technologies.map((technology, index) => {
+            {technologies.map((technology:any, index:number) => {
               return (
                 <span key={index} className="d-block mb-1">
                   {technology}

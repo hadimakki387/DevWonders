@@ -32,6 +32,9 @@ function Home() {
     reveal();
   }, []);
 
+  
+
+
   return (
     <div className="gradient ">
       <SideBar sideBar={sideBar} toggleSideBar={toggleSideBar} />
