@@ -59,14 +59,14 @@ useEffect(() => {
         
         <article className="AboutArticle">
         <div className="reveal">
-          <h4 className="">My Experience.</h4>
+          <h4 className="">My Reads.</h4>
           </div>
           
           <ul className="timeline AboutUl">
             <ReadsLis />
           </ul>
         <div className="reveal">
-          <h4 className="">My Reads.</h4>
+          <h4 className="">My Experiences.</h4>
           </div>
           
           <ul className="timeline AboutUl">
