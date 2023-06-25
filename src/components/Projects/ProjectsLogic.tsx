@@ -19,7 +19,7 @@ function ProjectsLogic({ onProjectSelect }: { onProjectSelect: Function }) {
       description:
         "The TikTok agency's landing page is a responsive and visually captivating website built using Next.js, React.js, and CSS. With its mobile-friendly design and intuitive navigation, the page showcases the agency's expertise in leveraging TikTok's platform for successful marketing campaigns. Through compelling visuals, interactive elements, and clear calls-to-action, the landing page creates an immersive experience, effectively communicating the agency's value proposition and engaging visitors across devices.",
       technologies: ["NextJs","ReactJs", "Css3"],
-      img: "tiktok-agency.gif",
+      img: "tiktok-agency.png",
       githubLink: "https://github.com/hadimakki387/marketing-agnce-landing-page",
       link:"https://tiktok-agency.netlify.app/"
     },
