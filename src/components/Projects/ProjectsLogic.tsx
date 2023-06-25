@@ -66,8 +66,8 @@ function ProjectsLogic({ onProjectSelect }: { onProjectSelect: Function }) {
           <figure className="projectFigure">
             <Image
               className="ProjectImg"
-              width={2000}
-              height={2000}
+              width={1920}
+              height={1080}
               src={"/" + project.img}
               alt="sample99"
             />
