@@ -2,7 +2,8 @@
 import React, { useEffect } from "react";
 import NavBar from "../../components/Home/NavBar";
 
-import AboutLi from "../../components/About/AboutLi";
+import ReadsLis from "../../components/About/ReadsLis";
+import ExperienceLis from "../../components/About/ExperienceLis.jsx";
 import Cursor from "../../components/Cursor";
 import NextButton from "../../components/NextButton";
 import SocialMediaLinks from "../../components/Home/SocialMediaLinks";
@@ -58,11 +59,18 @@ useEffect(() => {
         
         <article className="AboutArticle">
         <div className="reveal">
+          <h4 className="">My Experience.</h4>
+          </div>
+          
+          <ul className="timeline AboutUl">
+            <ReadsLis />
+          </ul>
+        <div className="reveal">
           <h4 className="">My Reads.</h4>
           </div>
           
           <ul className="timeline AboutUl">
-            <AboutLi />
+            <ExperienceLis/>
           </ul>
             <div className="reveal">
               <NextButton URI="/projects" Content="Lets Continue To Projects" />

@@ -1,10 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import ClickAwayListener from "react-click-away-listener";
 
-
-function ProjectInfo({handleClickAway,setNull,project}:{handleClickAway:any,setNull:any,project:any}) {
-  const { name, excerpt, description, technologies, img, Link } = project;
+function ProjectInfo({
+  handleClickAway,
+  setNull,
+  project,
+}: {
+  handleClickAway: any;
+  setNull: any;
+  project: any;
+}) {
+  const { name, excerpt, description, technologies, img, githubLink, link } =
+    project;
 
   function handleButtonClick() {
     setNull();
@@ -47,7 +56,7 @@ function ProjectInfo({handleClickAway,setNull,project}:{handleClickAway:any,setN
         <div className="main__post">
           <p className="te mb-4">{excerpt}</p>
           <Image
-            src={"/"+img}
+            src={"/" + img}
             alt="Piggment"
             width={2000}
             height={2000}
@@ -57,7 +66,7 @@ function ProjectInfo({handleClickAway,setNull,project}:{handleClickAway:any,setN
           <p className="ProjectInfoDescription">{description}</p>
           <h4>Technologies</h4>
           <p className="d-flex flex-wrap">
-            {technologies.map((technology:any, index:number) => {
+            {technologies.map((technology: any, index: number) => {
               return (
                 <span key={index} className="d-block mb-1">
                   {technology}
@@ -84,26 +93,29 @@ function ProjectInfo({handleClickAway,setNull,project}:{handleClickAway:any,setN
               rel="noopener noreferrer"
               className=""
             >
-              {Link}
+              {githubLink}
             </a>
           </p>
         </div>
-        {/* <a
-          className="open__project"
-          target="_blank"
-          id="cardHover"
-          rel="noopener noreferrer"
-        >
-          Open Project
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
+        {link ? (
+          <a
+            className="open__project"
+            target="_blank"
+            id="cardHover"
+            rel="noopener noreferrer"
+            href={link}
           >
-            <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
-          </svg>
-        </a> */}
+            Open Project
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"></path>
+            </svg>
+          </a>
+        ) : null}
       </div>
     </ClickAwayListener>
   );
