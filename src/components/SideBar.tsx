@@ -1,7 +1,7 @@
 "use client"
 import { keyframes } from "@emotion/react";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Reveal } from "react-awesome-reveal";
 
 
@@ -45,13 +45,26 @@ function SideBar({toggleSideBar,sideBar}:{toggleSideBar:Function,sideBar:Boolean
     transform: translate3d(0, 0, 0);
   }
 `
+
+const [showSideBar,setShowSideBar] = useState("")
+
+useEffect(()=>{
+  if(sideBar===true){
+  setShowSideBar("ShownSideBar")
+}else{
+  setShowSideBar("")
+}
+},[sideBar])
+
+
+
   return (
     <div>
-      {sideBar ? (
-        <div className="SideBar">
+     
+        <div className={"SideBar " + showSideBar}>
           <div className="NavBarListMobile">
             
-            <Reveal keyframes={customAnimation} cascade duration={500}>
+            <Reveal keyframes={customAnimation} cascade duration={500} delay={300}>
               <div className="">
                 
                   <Link
@@ -81,7 +94,7 @@ function SideBar({toggleSideBar,sideBar}:{toggleSideBar:Function,sideBar:Boolean
               </Reveal>
           </div>
         </div>
-      ) : null}
+   
     </div>
   );
 }

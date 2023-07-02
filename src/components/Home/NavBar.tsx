@@ -43,7 +43,7 @@ function NavBar({ toggleSideBar }: { toggleSideBar: Function }) {
         </ul>
       </div>
       <div
-        className="HamburgerMenu "
+        className="HamburgerMenu reveal"
         onClick={() => {
           toggleSideBar();
         }}

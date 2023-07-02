@@ -57,22 +57,22 @@ useEffect(() => {
           <h1 className="AboutTitle">About Me.</h1>
         </div>
         
-        <article className="AboutArticle">
-        <div className="reveal">
+        <article className="AboutArticle reveal">
+        <div className="">
           <h4 className="">My Reads.</h4>
           </div>
           
           <ul className="timeline AboutUl">
             <ReadsLis />
           </ul>
-        <div className="reveal">
+        <div className="">
           <h4 className="">My Experiences.</h4>
           </div>
           
           <ul className="timeline AboutUl">
             <ExperienceLis/>
           </ul>
-            <div className="reveal">
+            <div className="">
               <NextButton URI="/projects" Content="Lets Continue To Projects" />
               <div className="WindowsSocialMediaDiv">
                 <SocialMediaLinks />

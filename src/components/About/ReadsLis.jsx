@@ -26,7 +26,7 @@ function AboutLi() {
   ];
 
   return Li.map((item, index) => (
-    <div className="reveal" key={index}>
+    <div className="" key={index}>
       <li id={index} className="AboutLi">
         <div className="TitleAndEndDate">
           <a
