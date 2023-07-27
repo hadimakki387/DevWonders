@@ -13,6 +13,7 @@ function NavBar({ toggleSideBar }: { toggleSideBar: Function }) {
             height={50}
             alt="home"
             src="/house-solid-white.png"
+            className="HomeBtn"
           />
         </Link>
       </div>

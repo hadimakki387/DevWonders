@@ -75,10 +75,11 @@ function Projects() {
           <ProjectsLogic onProjectSelect={handleProjectSelect} />
           <div className="reveal">
             <NextButton URI="/resume" Content="Lets Go To My Resume." />
-            <div className="WindowsSocialMediaDiv">
+            
+          </div>
+          <div className="WindowsSocialMediaDiv">
               <SocialMediaLinks />
             </div>
-          </div>
         </div>
       </div>
 

@@ -88,7 +88,7 @@ function ProjectInfo({
           </h4>
           <p className="ProjectInfoLink">
             <a
-              href="codeWonders.com"
+              href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
               className=""
