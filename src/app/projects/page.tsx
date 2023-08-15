@@ -20,6 +20,9 @@ function Projects() {
   }, [selectedProject]);
 
   const handleProjectSelect = (project: any) => {
+    if (selectedProject) {
+    return;
+  }
     setSelectedProject(project);
   };
 

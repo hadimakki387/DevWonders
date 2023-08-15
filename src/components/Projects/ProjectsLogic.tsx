@@ -4,16 +4,6 @@ import React from "react";
 function ProjectsLogic({ onProjectSelect }: { onProjectSelect: Function }) {
   const Projects = [
     {
-      name: "Dev Wonders",
-      excerpt: "My own Portfolio website",
-      description:
-        "My portfolio website, built using React and CSS, is a visually appealing showcase of my skills and projects. It offers a clean and modern design, responsive layout, and intuitive navigation. Visitors can explore my professional background, view my notable projects with descriptions and technologies used, and easily get in touch with me through the contact section. The website serves as a concise representation of my abilities and aims to leave a lasting impression on potential clients and collaborators.",
-      technologies: ["ReactJs", "Css3"],
-      img: "DevWonders.png",
-      githubLink: "https://github.com/hadimakki387/MyPortfolieWebsite",
-      link:"https://dev-wonders.netlify.app/"
-    },
-    {
       name: "Tiktok Agency",
       excerpt: "Landing Page for a Tiktok Agency",
       description:
