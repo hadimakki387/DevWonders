@@ -5,6 +5,8 @@ import NextButton from "@/components/NextButton";
 import SocialMediaLinks from "@/components/Home/SocialMediaLinks";
 import SideBar from "@/components/SideBar";
 import NavBar from "@/components/Home/NavBar";
+import Reveal from "react-awesome-reveal";
+import { customAnimation } from "@/utils/constants";
 
 function ContactMe() {
   const [name, setName] = useState("");
@@ -43,26 +45,6 @@ function ContactMe() {
     setSideBar(!sideBar);
   }
 
-  useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
-
-    let index = 0;
-
-    function reveal() {
-      if (index === reveals.length) {
-        return;
-      }
-
-      setTimeout(() => {
-        reveals[index].classList.add("active");
-        index++;
-        reveal();
-      }, 200);
-    }
-
-    reveal();
-  }, []);
-
   return (
     <div className="snipcss-RDU5U">
       <Cursor />
@@ -71,13 +53,21 @@ function ContactMe() {
       <NavBar toggleSideBar={toggleSideBar} />
 
       <div className="ContactDiv">
-        <h1 className="AboutTitle reveal">Contact.</h1>
-        <article>
-          <p className="reveal">
-            shoot me an email directly on
-            <b className="MyEmail"> hmakki387@gmail.com</b>
-          </p>
-        </article>
+        <Reveal
+          triggerOnce
+          cascade
+          keyframes={customAnimation}
+          duration={400}
+          delay={700}
+        >
+          <h1 className="AboutTitle ">Contact.</h1>
+          <article>
+            <p className="">
+              shoot me an email directly on
+              <b className="MyEmail"> hmakki387@gmail.com</b>
+            </p>
+          </article>
+        </Reveal>
       </div>
 
       <br />
@@ -87,66 +77,90 @@ function ContactMe() {
           handleSubmit;
         }}
       >
-        <div className="fields reveal">
-          <div className="field half">
-            <input
-              type="text"
-              name="name"
-              id="name"
-              className="form-control NameArea TransparentInput"
-              placeholder="Name"
-              aria-required="true"
-              value={name}
-              onChange={() => {
-                handleNameChange;
-              }}
-            />
-          </div>
-          <div className="field half reveal">
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="form-control TransparentInput"
-              placeholder="Email"
-              aria-required="true"
-              value={email}
-              onChange={() => {
-                handleEmailChange;
-              }}
-            />
-          </div>
-          <div className="field reveal">
-            <textarea
-              name="message"
-              id="message"
-              rows={5}
-              className="form-control TextArea"
-              placeholder="Message"
-              aria-required="true"
-              spellCheck="false"
-              value={message}
-              onChange={() => {
-                handleMessageChange;
-              }}
-            ></textarea>
-          </div>
-        </div>
-        <div className="reveal">
-          <button
-            className="btn btn-default "
-            type="submit"
-            aria-label="Send Message"
+        <div className="fields ">
+          <Reveal
+            triggerOnce
+            cascade
+            keyframes={customAnimation}
+            duration={400}
+            delay={1000}
           >
-            Send Message
-          </button>
+            <div className="field half">
+              <input
+                type="text"
+                name="name"
+                id="name"
+                className="form-control NameArea TransparentInput"
+                placeholder="Name"
+                aria-required="true"
+                value={name}
+                onChange={() => {
+                  handleNameChange;
+                }}
+              />
+            </div>
+            <div className="field half ">
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="form-control TransparentInput"
+                placeholder="Email"
+                aria-required="true"
+                value={email}
+                onChange={() => {
+                  handleEmailChange;
+                }}
+              />
+            </div>
+            <div className="field ">
+              <textarea
+                name="message"
+                id="message"
+                rows={5}
+                className="form-control TextArea"
+                placeholder="Message"
+                aria-required="true"
+                spellCheck="false"
+                value={message}
+                onChange={() => {
+                  handleMessageChange;
+                }}
+              ></textarea>
+            </div>
+          </Reveal>
         </div>
+        <Reveal
+          triggerOnce
+          cascade
+          keyframes={customAnimation}
+          duration={400}
+          delay={1000}
+        >
+          <div className="">
+            <button
+              className="btn btn-default "
+              type="submit"
+              aria-label="Send Message"
+            >
+              Send Message
+            </button>
+          </div>
+        </Reveal>
       </form>
-      <div className="reveal">
-        <NextButton Content="Go Back Home" URI="/" />
-        <div className="WindowsSocialMediaDiv">
-          <SocialMediaLinks />
-        </div>
+      <div className="">
+        <Reveal
+          triggerOnce
+          cascade
+          keyframes={customAnimation}
+          duration={400}
+          delay={1000}
+        >
+          <NextButton Content="Go Back Home" URI="/" />
+          <div className="WindowsSocialMediaDiv">
+            <SocialMediaLinks />
+          </div>
+        </Reveal>
       </div>
     </div>
   );

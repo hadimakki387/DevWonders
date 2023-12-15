@@ -1,6 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import NextButton from "../NextButton";
+import Reveal from "react-awesome-reveal";
+import { customAnimation } from "@/utils/constants";
 
 function Title() {
   return (
@@ -39,17 +41,18 @@ function Body2() {
 function AboutMeArticle() {
   return (
     <article>
-      <div className="reveal">
+      <Reveal
+        triggerOnce
+        cascade
+        keyframes={customAnimation}
+        duration={400}
+        delay={700}
+      >
         <Title />
-      </div>
-      <div className="reveal">
         <Body1 />
-      </div>
-      <div className="reveal">
         <Body2 />
         <NextButton URI="/about" Content="See More About Me" />
-        
-      </div>
+      </Reveal>
     </article>
   );
 }

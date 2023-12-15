@@ -158,7 +158,7 @@ button:not(:disabled) {
   color: var(--cw) !important;
   box-shadow: none !important;
   padding: 24px 21px !important;
-  border-color: var(--border-color) !important;
+
 }
 
 .TextArea {
@@ -183,7 +183,7 @@ button:not(:disabled) {
   color: var(--cw) !important;
   box-shadow: none !important;
   padding: 24px 21px !important;
-  border-color: var(--border-color) !important;
+
 }
 
 .ContactDiv{

@@ -8,6 +8,9 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import NavBar from "@/components/Home/NavBar";
+import Reveal from "react-awesome-reveal";
+import { customAnimation, shortCustomAnimation } from "@/utils/constants";
+import ViewPdf from "@/components/global/ViewPdf";
 
 function Resume() {
   const [sideBar, setSideBar] = useState(false);
@@ -15,59 +18,38 @@ function Resume() {
   function toggleSideBar() {
     setSideBar(!sideBar);
   }
-  useEffect(() => {
-    const reveals = document.querySelectorAll(".reveal");
 
-    let index = 0;
-
-    function reveal() {
-      if (index === reveals.length) {
-        return;
-      }
-
-      setTimeout(() => {
-        reveals[index].classList.add("active");
-        index++;
-        reveal();
-      }, 200);
-    }
-
-    reveal();
-  }, []);
   return (
     <div className="">
       <Cursor />
       <NavBar toggleSideBar={toggleSideBar} />
 
       <div className="ResumeBody">
-        <div className="reveal">
+        <Reveal
+          triggerOnce
+          cascade
+          keyframes={shortCustomAnimation}
+          duration={400}
+          delay={700}
+        >
           <h1 className="ResumeTitle">Resume.</h1>
-        </div>
-        <div className="reveal">
+
           <p className="ResumeText">
             Reach out to me via my{" "}
             <Link className="contactLink" href={"/contact"}>
               Contact Page
             </Link>{" "}
             or{" "}
-            <a href="MyCv.pdf" className="ContactLink" download>
+            <a href={"/MyResume.pdf"} className="ContactLink" download>
               Download
             </a>{" "}
             the resume
           </p>
-        </div>
-        <div className="reveal">
+
           <div className="resumeImgDiv">
-            <Image
-              height={1000}
-              width={1000}
-              src="/myCv.png"
-              alt="Cv"
-              className="resumeImg"
-            />
+           <ViewPdf url="/MyResume.pdf"/>
           </div>
-        </div>
-        <div className="reveal">
+    
           <div>
             <NextButton
               Content="Are you convinced to contact me now ?"
@@ -77,7 +59,7 @@ function Resume() {
               <SocialMediaLinks />
             </div>
           </div>
-        </div>
+        </Reveal>
       </div>
     </div>
   );
